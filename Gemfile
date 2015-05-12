@@ -6,8 +6,9 @@ gem 'rails', '4.1.5'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'haml'
 
-
+gem 'bootstrap-sass', '~> 3.2.0'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

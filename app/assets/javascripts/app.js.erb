@@ -1,0 +1,41 @@
+(function() {
+	app = angular.module('books', [ ]);
+	app.controller('BooksController', function($scope) {
+		$scope.currentBookId = -1;
+		$scope.library = [
+			{
+				name: "First book",
+				caption: "Прекрасная первая книга",
+				release_date: "2013"
+			},
+			{
+				name: "Second book",
+				caption: "Прекрасная вторая книга",
+				release_date: "2014"
+			},
+			{
+				name: "Third book",
+				caption: "Прекрасная третья книга",
+				release_date: "2015"
+			}
+		];
+		$scope.editBook = function ( id ) {
+			$scope.currentBookId = id;
+			$scope.name = $scope.library[id].name;
+			$scope.caption = $scope.library[id].caption;
+			$scope.release_date = $scope.library[id].release_date;
+		};
+		$scope.saveBook = function() {
+			if( $scope.currentBookId > -1 ){
+				var id = $scope.currentBookId;
+				$scope.library[id].name = $scope.name;
+				$scope.library[id].caption = $scope.caption;
+				$scope.library[id].release_date = $scope.release_date;
+				$scope.name = '';
+				$scope.caption = '';
+				$scope.release_date = '';
+				$scope.currentBookId = -1;
+			}
+		};
+	});
+})();

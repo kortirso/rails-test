@@ -1,0 +1,50 @@
+%br
+.container
+	.row{"ng-controller" => "BooksController as library"}
+		.col-xs-12
+			%h1 Каталог книг
+			%table.table
+				%thead
+					%tr
+						%td №
+						%td Название книги
+						%td Описание книги
+						%td Дата создания
+						%td Редактирование
+				%tbody
+					%tr{"ng-repeat" => "book in library"}
+						%td {{ $index + 1 }}
+						%td {{ book.name}}
+						%td {{ book.caption }}
+						%td {{ book.release_date }}
+						%td
+							= link_to "Edit", "#edit", "data-toggle" => "modal", class: 'btn btn-sm btn-success', "ng-click" => "editBook($index)"
+		.modal.fade.in#edit
+			.modal-dialog
+				.modal-content
+					.modal-header
+						%button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+						%h3 Редактирование записей
+					%form
+						.modal-body
+							.row
+								.col-xs-2
+									%label Название
+								.col-xs-4
+									%input.form-control{"ng-model" => "name", type: "text"}/
+							%br
+							.row
+								.col-xs-2
+									%label Описание
+								.col-xs-4
+									%input.form-control{"ng-model" => "caption", type: "text"}/
+							%br
+							.row
+								.col-xs-2
+									%label Дата создания
+								.col-xs-4
+									%input.form-control{"ng-model" => "release_date", type: "text"}/
+							%br
+							.row
+								.col-xs-9.col-xs-offset-2
+									%button.btn.btn-success{"ng-click" => "saveBook()", "aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} Сохранить

@@ -11,5 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require angular.min.js
+//= require app.js
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require_tree .
