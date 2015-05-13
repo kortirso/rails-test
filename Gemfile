@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
+ruby '2.2.1'
 gem 'rails', '4.1.5'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
+gem 'sqlite3'
 gem 'haml'
+gem 'rails_12factor'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 # Gems used only for assets and not required
