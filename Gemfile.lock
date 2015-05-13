@@ -55,6 +55,8 @@ GEM
     minitest (5.6.1)
     pg (0.18.1)
     polyglot (0.3.5)
+    puma (2.11.2)
+      rack (>= 1.1, < 2.0)
     rack (1.5.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -117,6 +119,7 @@ DEPENDENCIES
   haml
   jquery-rails
   pg
+  puma
   rails (= 4.1.5)
   rails_12factor
   sass-rails
